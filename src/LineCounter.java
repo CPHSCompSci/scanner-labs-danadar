@@ -16,21 +16,24 @@ public class LineCounter
 
    public LineCounter(String s)
    {
+	   setLine(s);
    }
 
 	public void setLine(String s)
 	{
+		this.line = s;
 	}
 
 	public int getCount()
 	{
 		int count=0;	
-		return count;
+		String[] nums = line.split(" ");
+		return nums.length;
 	}
 
 	public String getLine()
 	{
-		return "";
+		return line;
 	}
 
 	public String toString()
