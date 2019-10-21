@@ -18,7 +18,7 @@ public class DogFood
    {
 		Scanner chopper = new Scanner(line);
 		double cups = 0;
-		//calc code goes here
+		
 		String[] nums = line.split(" ");
 		for(String s: nums)
 		{
@@ -60,7 +60,7 @@ public class DogFood
 			}
 		}
 		this.amount = Math.ceil(cups / 10);
-		System.out.println(cups + "cups");
+		System.out.println(cups + " cups");
    }
 
    public double getAmount()
@@ -70,6 +70,6 @@ public class DogFood
 
 	public String toString()
 	{
-		return "";
+		return amount + " - 10 POUND BAGS\n";
 	}
 }
