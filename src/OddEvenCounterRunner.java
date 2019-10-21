@@ -5,18 +5,28 @@
 import java.util.Scanner;
 import static java.lang.System.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 public class OddEvenCounterRunner
 {
    public static void main(String args[])
    {
-	   Scanner input = new Scanner(System.in);
-	   OddEvenCounter count = new OddEvenCounter();
-	   
-	   System.out.println("Enter a line of strings separated by spaces");
-	   count.setLine(input.nextLine());
-	   System.out.println();
-	   
-	   System.out.println("even count = " + count.getEvenCount());
-	   System.out.println("odd count = " + count.getOddCount());
+	   Scanner input;
+	try {
+		input = new Scanner(new File("OELine.txt"));
+		OddEvenCounter count = new OddEvenCounter();
+		   
+		while(input.hasNextLine())
+		{
+			String Line = input.nextLine();
+			count.setLine(Line);
+			System.out.println(Line);
+			System.out.println(count);
+		}
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 }

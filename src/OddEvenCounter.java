@@ -27,17 +27,13 @@ public class OddEvenCounter
 	public int getEvenCount()
 	{
 		int count= 0;
-		char[] evens = {'0', '2', '4', '6', '8'};
-		String[] nums = line.split(" ");
+		Scanner even = new Scanner(line);
 		
-		for(String s: nums)
+		while(even.hasNextInt())
 		{
-			for(char c: evens)
+			if(even.nextInt() % 2 == 0)
 			{
-				if(s.charAt(s.length() - 1) == c)
-				{
-					count++;
-				}
+				count++;
 			}
 		}
 		
@@ -47,24 +43,21 @@ public class OddEvenCounter
 	public int getOddCount()
 	{
 		int count= 0;
-		char[] odds = {'1', '3', '5', '7', '9'};
-		String[] nums = line.split(" ");
+		Scanner odd = new Scanner(line);
 		
-		for(String s: nums)
+		while(odd.hasNextInt())
 		{
-			for(char c: odds)
+			if(odd.nextInt() % 2 == 1)
 			{
-				if(s.charAt(s.length() - 1) == c)
-				{
-					count++;
-				}
+				count++;
 			}
 		}
+		
 		return count;
 	}
 
 	public String toString( )
 	{
-		return "";
+		return "even count =" + this.getEvenCount() + "\nodd count = " + this.getOddCount();
 	}
 }

@@ -38,6 +38,6 @@ public class LineCounter
 
 	public String toString()
 	{
-		return getLine();
+		return "count = " + getCount();
 	}
 }

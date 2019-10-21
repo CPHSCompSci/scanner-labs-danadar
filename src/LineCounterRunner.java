@@ -4,17 +4,27 @@
 
 import java.util.Scanner;
 import static java.lang.System.*;  
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class LineCounterRunner
 {
    public static void main(String[] args)
    {
-	   Scanner input = new Scanner(System.in);
-	   LineCounter counter = new LineCounter();
-	   
-	   System.out.println("Enter a list of numbers separated by spaces.");
-	   counter.setLine(input.nextLine());
-	   System.out.println();
-	   System.out.println("Count = " + counter.getCount());
+	try {
+		Scanner input = new Scanner(new File("LineCounter.txt"));
+		LineCounter counter = new LineCounter();
+		   
+		while(input.hasNextLine())
+		{
+			String line = input.nextLine();
+			counter.setLine(line);
+			System.out.println(line);
+			System.out.println(counter);
+		}
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
    }
 }
